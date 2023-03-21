@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { API_KEY, API_HOST } from "@env";
 export default function (endPoint, query) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -7,8 +7,8 @@ export default function (endPoint, query) {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "7261b66634msh157521599a4ad42p1e6238jsn5ee3a4923c91",
-      "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
+      "X-RapidAPI-Key": API_KEY,
+      "X-RapidAPI-Host": API_HOST,
     },
   };
   useEffect(() => {

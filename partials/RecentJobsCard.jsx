@@ -62,7 +62,7 @@ export default function RecentJobsCard({ item }) {
               fontFamily: 'InterSemi'
             }}
           >
-            {item.job_title}
+            {item?.job_title}
           </Text>
           <View
             style={{
@@ -84,7 +84,7 @@ export default function RecentJobsCard({ item }) {
                 paddingRight: 10
               }}
             >
-              {item.employer_name}
+              {item?.employer_name}
             </Text>
             <Text
               style={{
@@ -94,7 +94,7 @@ export default function RecentJobsCard({ item }) {
                 width: '60%',
               }}
             >
-              Posted on :  {new Date(item.job_posted_at_datetime_utc).toLocaleDateString('en-US', { dateStyle: 'long' })}
+              Posted on :  {new Date(item?.job_posted_at_datetime_utc).toLocaleDateString('en-US', { dateStyle: 'long' })}
             </Text>
           </View>
         </View>

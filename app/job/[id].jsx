@@ -72,7 +72,6 @@ export default function App() {
                   color: '#ddd',
                   fontSize: 16,
                   paddingTop: 2,
-                  width: 200,
                   fontFamily: 'InterRegular'
                 }}
                 numberOfLines={1}
@@ -93,7 +92,6 @@ export default function App() {
           >
             <Text
               style={{
-
                 color: job.job_is_remote ? '#dc3545' : '#0d6efd',
                 paddingVertical: 4,
                 fontSize: 16,
@@ -186,6 +184,7 @@ export default function App() {
                 style={{
                   flex: 1,
                   marginTop: 12,
+                  minHeight: 600,
                 }}
               >
 
@@ -224,39 +223,47 @@ export default function App() {
                   marginTop: 12,
                 }}
               >
-                <Text
-                  style={{
-                    color: Color.lighter,
-                    fontSize: 20,
-                    paddingTop: 1,
-                    paddingHorizontal: 20,
-                    fontFamily: 'InterSemi'
-                  }}
-                >
-                  Benefits
-                </Text>
-                {job?.job_highlights?.Benefits
-                  .map((item, index) =>
-                    <Text
-                      key={index}
-                      style={{
-                        color: '#ddd',
-                        fontSize: 16,
-                        paddingTop: 20,
-                        paddingHorizontal: 20,
-                        fontFamily: 'InterRegular',
-                        borderColor: Color.lighter,
-                        borderWidth: 1,
-                        borderRadius: 8,
-                        padding: 12,
-                        margin: 12,
+                {
+                  job?.job_highlights?.Benefits
+                    ? <>
+                      <Text
+                        style={{
+                          color: Color.lighter,
+                          fontSize: 20,
+                          paddingTop: 1,
+                          paddingHorizontal: 20,
+                          fontFamily: 'InterSemi'
+                        }}
+                      >
+                        Benefits
+                      </Text>
+                      {job?.job_highlights?.Benefits
+                        .map((item, index) =>
+                          <Text
+                            key={index}
+                            style={{
+                              color: '#ddd',
+                              fontSize: 16,
+                              paddingTop: 20,
+                              paddingHorizontal: 20,
+                              fontFamily: 'InterRegular',
+                              borderColor: Color.lighter,
+                              borderWidth: 1,
+                              borderRadius: 8,
+                              padding: 12,
+                              margin: 12,
 
-                      }}
-                    >
-                      {`${index + 1}. ${item}`}
-                    </Text>
-                  )
+                            }}
+                          >
+                            {`${index + 1}. ${item}`}
+                          </Text>
+                        )
+                      }
+
+                    </>
+                    : null
                 }
+
                 <Text
                   style={{
                     color: Color.lighter,

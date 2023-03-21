@@ -1,8 +1,15 @@
+import { useRouter } from 'expo-router'
 import React from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import Color from '../utils/constants/Color'
 
 const Welcome = () => {
+  const router = useRouter()
+  const [query, setQuery] = React.useState('')
+  const handeSearch = () => {
+    if (query === '') return
+    router.push(`/search/${query}`)
+  }
   return (
     <View
       style={{
@@ -37,6 +44,7 @@ const Welcome = () => {
         }}
       >
         <TextInput
+          onChangeText={text => setQuery(text)}
           style={{
             fontFamily: 'InterMedium',
             height: 50,
@@ -50,15 +58,15 @@ const Welcome = () => {
           placeholder='What are you looking for?'
         />
         <TouchableOpacity
+          onPress={handeSearch}
           style={{
-
             backgroundColor: Color.primary,
             borderRadius: 12,
             marginLeft: 8,
             width: 60,
             height: 50,
             justifyContent: 'center',
-            alignItems : 'center'
+            alignItems: 'center'
           }}
         >
           <Image

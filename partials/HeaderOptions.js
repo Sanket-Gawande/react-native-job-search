@@ -41,7 +41,11 @@ export default options = ({ title }) => {
       </TouchableOpacity>
     ),
     headerRight: () => (
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          router.push("/profile");
+        }}
+      >
         <Image
           style={{
             width: 50,
