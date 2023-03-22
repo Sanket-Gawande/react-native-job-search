@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router'
 import React from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import user from '../public/user'
 import Color from '../utils/constants/Color'
 
 const Welcome = () => {
@@ -24,7 +25,7 @@ const Welcome = () => {
           color: Color.lighter
         }}
       >
-        Hello 👋, Sanket
+        Hello 👋, {user.name.title}. {user.name.first}
 
       </Text>
       <Text
