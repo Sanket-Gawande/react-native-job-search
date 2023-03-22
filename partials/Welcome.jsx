@@ -30,8 +30,9 @@ const Welcome = () => {
       <Text
         style={{
           color: Color.primary,
-          fontFamily: 'InterSemi',
-          fontSize: 24,
+          fontFamily: 'InterBold',
+          fontSize: 26,
+          marginVertical: 8
         }}
       >
         Find your dream job!
@@ -50,7 +51,7 @@ const Welcome = () => {
             height: 50,
             paddingHorizontal: 20,
             borderRadius: 12,
-            color: Color.light,
+            color: 'white',
             backgroundColor: Color.lighter,
             fontSize: 16,
             flex: 1

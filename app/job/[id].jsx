@@ -21,7 +21,7 @@ export default function App() {
         options={HeaderOptions({ title: job.job_job_title })}
       />
       <ScrollView
-        showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator
         style={{
           backgroundColor: '#131929',
         }}
@@ -124,7 +124,7 @@ export default function App() {
                 onPress={() => setTab(item.toLowerCase())}
                 key={index}
                 style={{
-                  marginRight: 12,
+                  marginRight: item === 'Highlights' ? 30 : 12,
                   borderRadius: 20,
                   overflow: 'hidden',
                   borderColor: Color.lighter,
@@ -141,13 +141,13 @@ export default function App() {
                       color: 'white',
                       paddingHorizontal: 12,
                       paddingVertical: 10,
-
                       width: 150,
                       textAlign: 'center',
                     }
                   }
                 >
                   {item}
+
                 </Text>
               </TouchableHighlight>
             )}
@@ -156,6 +156,7 @@ export default function App() {
               backgroundColor: Color.light,
               marginTop: 12,
               flexDirection: 'row',
+
             }}
           >
           </FlatList>
@@ -184,11 +185,11 @@ export default function App() {
                 style={{
                   flex: 1,
                   marginTop: 12,
-                  minHeight: 600,
+                  minHeight: 650,
                 }}
               >
 
-                {job.job_highlights?.Responsibilities
+                {job.job_highlights?.Responsibilities && job.job_highlights?.Responsibilities
                   .map((item, index) =>
                     <Text
                       key={index}
@@ -237,7 +238,7 @@ export default function App() {
                       >
                         Benefits
                       </Text>
-                      {job?.job_highlights?.Benefits
+                      {job?.job_highlights?.Benefits && job?.job_highlights?.Benefits
                         .map((item, index) =>
                           <Text
                             key={index}
@@ -305,7 +306,7 @@ export default function App() {
           }
         </View>
       </ScrollView>
-      {/* <View>
+      <View>
         <TouchableHighlight
           style={{
             backgroundColor: Color.primary,
@@ -325,7 +326,7 @@ export default function App() {
             Apply Now
           </Text>
         </TouchableHighlight>
-      </View> */}
+      </View>
     </SafeAreaView >
   )
 }

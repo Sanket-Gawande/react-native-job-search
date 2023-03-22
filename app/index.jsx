@@ -9,25 +9,30 @@ export default function App() {
   const router = useRouter()
   return (
     <SafeAreaView>
-      <Stack.Screen
-        options={HeaderOptions({ title: 'Home' })}
-      />
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={{
-          backgroundColor: '#131929',
-        }}
-      >
-        <View
+      <View>
+        <Stack.Screen
+          options={HeaderOptions({ title: 'Home' })}
+        />
+        <ScrollView
+          showsVerticalScrollIndicator={false}
           style={{
-            flex: 1,
+            backgroundColor: '#131929',
+
           }}
         >
-          <Welcome />
-          <PopularJobs />
-          <RecentJobs />
-        </View>
-      </ScrollView>
+
+          <View
+            style={{
+              flex: 1,
+            }}
+          >
+            <Welcome />
+            <PopularJobs />
+            <RecentJobs />
+          </View>
+        </ScrollView>
+      </View>
     </SafeAreaView>
+
   )
 }
