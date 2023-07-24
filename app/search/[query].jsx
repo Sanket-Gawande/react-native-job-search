@@ -17,7 +17,7 @@ export default function Search() {
   // fake loading for 1 second
 
   React.useEffect(() => {
-    if(!query) return;
+    if (!query) return;
     setTimeout(() => {
       const filtered = response.data.filter((job) =>
 
@@ -58,14 +58,15 @@ export default function Search() {
                 No results found
               </Text>
               : (
-                (filtered ?? [{}]).map((job) => (
-                  <>
+                (filtered ?? [{}]).map((job, index) => {
+                  let id = (Math.random().toString());
+                  return <>
                     <RecentJobsCard
-                      key={job.employer_name}
+                      key={id}
                       item={job}
                     />
                   </>
-                ))
+                })
               )
           }
         </View>

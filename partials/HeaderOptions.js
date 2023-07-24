@@ -55,7 +55,7 @@ export default options = ({ title }) => {
             borderWidth: 2,
             marginVertical: 12,
           }}
-          source={{ uri: "https://sanket.gatsbyjs.io/images/profile.webp" }}
+          source={{ uri: "https://randomuser.me/api/portraits/men/26.jpg" }}
         />
       </TouchableOpacity>
     ),

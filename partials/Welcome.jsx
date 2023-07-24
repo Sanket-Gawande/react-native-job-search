@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router'
 import React from 'react'
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import user from '../public/user'
 import Color from '../utils/constants/Color'
 
 const Welcome = () => {
@@ -24,14 +25,15 @@ const Welcome = () => {
           color: Color.lighter
         }}
       >
-        Hello 👋, Sanket
+        Hello 👋, {user.name.title}. {user.name.first}
 
       </Text>
       <Text
         style={{
           color: Color.primary,
-          fontFamily: 'InterSemi',
-          fontSize: 24,
+          fontFamily: 'InterBold',
+          fontSize: 26,
+          marginVertical: 8
         }}
       >
         Find your dream job!
@@ -50,7 +52,7 @@ const Welcome = () => {
             height: 50,
             paddingHorizontal: 20,
             borderRadius: 12,
-            color: Color.light,
+            color: 'white',
             backgroundColor: Color.lighter,
             fontSize: 16,
             flex: 1

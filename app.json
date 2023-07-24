@@ -1,5 +1,11 @@
 {
   "expo": {
+    "icon": "icon.png",
+    "splash": {
+    "image": "splash.png",
+    "resizeMode": "cover",
+    "backgroundColor": "#25292e"
+  },
     "scheme": "acme",
     "web": {
       "bundler": "metro"
